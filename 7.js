@@ -1,30 +1,24 @@
 function bingo(ticket, win) {
     let arr = [];
-    ticket.map(w => {
-        let j = w[0].split('');
-        j.map(d => {
-            if (d.charCodeAt() === w[1]) {
-
-                console.log(d.charCodeAt());
-                
-                if (arr.indexOf(d.charCodeAt()) === -1) { arr.push(d.charCodeAt()) };             
-            }
-        })
-    }) 
-    
-    console.log(arr);
-    
-    // return arr.length >= win ? 'Winner!' : 'Loser!';    
+    ticket.map(g => {
+        let f = g[0].split('');
+        let v = f.filter((o, p) => f.indexOf(o) === p);        
+        v.map(o => {
+            if (o.charCodeAt() === g[1]) {
+                arr.push(o.charCodeAt());                
+            };            
+        })  
+    })
+    return arr.length >= win ? 'Winner!' : 'Loser!';      
 }
 
-(bingo([['ZOHWA', 89], ['HFWAMH', 86], ['IH', 80], ['SKEMLOJ', 84], ['RQD', 82], ['FGUJU', 87], ['OANVPRV', 72], ['RXHLUPAP', 82], ['ZPTHR', 70], ['WE', 70]], 2)); // Winner
-// console.log((bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 2)));
-// console.log((bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1)));
-// console.log((bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3)));
-// console.log(bingo([['ZOHWA', 89], ['HFWAMH', 86], ['IH', 80], ['SKEMLOJ', 84], ['RQD', 82], ['FGUJU', 87], ['OANVPRV', 72], ['RXHLUPAP', 82], ['ZPTHR', 70], ['WE', 70]], 2));   // 'Loser!');
-// (bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1));    // 'Winner!');
-// (bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3));   // 'Loser!');
 
+
+console.log((bingo([['CQQ', 80], ['TH', 73], ['HVGH', 78], ['OVP', 82], ['TDA', 81]], 1))); //'Loser!'
+// console.log((bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 2))); //'Loser!'
+// console.log((bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1))); //'Winner!'
+// console.log((bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3))); //'Loser!'
+// console.log(bingo([['ZOHWA', 89], ['HFWAMH', 86], ['IH', 80], ['SKEMLOJ', 84], ['RQD', 82], ['FGUJU', 87], ['OANVPRV', 72], ['RXHLUPAP', 82], ['ZPTHR', 70], ['WE', 70]], 2));   // 'Loser!');
 
 
 
